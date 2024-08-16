@@ -1,0 +1,11 @@
+{
+  "name": "expansion-reminder",
+  "version": "1.0.0",
+  "title": "Factorio 2 and Space Age expansion reminder",
+  "author": "Subject31415",
+  "factorio_version": "1.1",
+  "dependencies": [
+    "base >= 1.1"
+  ],
+  "description": "Periodically reminds you that Factorio 2 and Space Age expansion has not yet been released"
+}
