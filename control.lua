@@ -1,9 +1,21 @@
+local facts = require("lib.facts")
 local DEFAULT_TICKS_PER_DAY = 25000
 local MIN_TICKS_PER_DAY = 600
 
 local remind = function()
     global.days_without_expansion = (global.days_without_expansion or 0) + 1
-    game.print({"factorio2-reminder.days-without-factorio2", global.days_without_expansion})
+    local i = global.remind_idx or 1
+    game.print({"expansion-reminder.days-without-expansion-" .. i, global.days_without_expansion})
+    if i >= 3 then
+        i = 1
+    else
+        i = i + 1
+    end
+    global.remind_idx = i
+
+    local j = math.random(1, 3)
+    local k = math.random(1, #facts)
+    game.print({"expansion-reminder.fact-" .. j, facts[k].fff, facts[k].date, facts[k].title})
 end
 
 local manual_tick_update = function()
