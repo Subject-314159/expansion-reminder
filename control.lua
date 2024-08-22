@@ -19,6 +19,24 @@ local remind = function()
         local j = math.random(1, 3)
         local k = math.random(1, #facts)
         game.print({"expansion-reminder.fact-" .. j, facts[k].fff, facts[k].date, facts[k].title})
+
+        -- Show random in-depth content (if available)
+        if facts[k].content then
+            -- Make content type array
+            local cat = {}
+            for type, c in pairs(facts[k].content) do
+                table.insert(cat, type)
+            end
+
+            -- Get random content type
+            local rnd = math.random(1, #cat)
+            local rcat = cat[rnd]
+            local content = facts[k].content[rcat]
+
+            -- Get random description
+            local description = content[math.random(1, #content)]
+            game.print(description.summary)
+        end
     end
 end
 
