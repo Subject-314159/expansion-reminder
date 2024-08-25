@@ -33,8 +33,18 @@ local fact = {
 
 ---
 
+# Known issues
+
+-   None, feel free to open a bug report
+
 # Roadmap
 
 -   Implement check for base version and installed mods
 -   Add separate remarks for when Factorio 2'ish is installed
 -   Update locale for after the release date
+
+# Collaborations welcome
+
+-   Start a discussion with your ideas
+-   Open a pull request on Github
+-   Report issues under discussions
