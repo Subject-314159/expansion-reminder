@@ -20,6 +20,25 @@ local facts_structure = {{
 }}
 
 local facts = {{
+    date = "Aug 30 2024",
+    fff = "FFF #425",
+    tille = "Resource search & Assembler GUI improvements",
+    content = {
+        new_qol = {{
+            name = "Resource search",
+            summary = "The new remote view now has the ability to search for resource patches",
+            description = "From the remote view it is possible to search for resources. The search is performed in an optimized non-blocking way and results are displayed when the search is completed. Resource patches can also be pinned and the resource amount is updated according the actual remaining amount."
+        }, {
+            name = "Recipe crafting throughput tooltip",
+            summary = "When hovering a recipe on an assembling machine the tooltip shows the actual throughput for that machine",
+            description = "With the new Space Age mechanics, such as quality, recipe productivity research and the updated beacon mechanism, it becomes difficult to work out the actual throughput of a given machine. The tooltip now displays the actual throughput for that recipe, including all bonuses that apply to that machine."
+        }, {
+            name = "Assembler recipe info",
+            summary = "Assembling machines now separately show the recipe info and the actual item info",
+            description = "Setting and showing the recipe is now done on a separate line in the assembling machine. Hovering over the recipe shows the tooltip for that recipe, while hovering over the output item shows the details for that item. This becomes especially valuable with the new spoilage mechanic."
+        }}
+    }
+}, {
     date = "Aug 23 2024",
     fff = "FFF #425",
     title = "Behind the legs",
@@ -275,31 +294,139 @@ local facts = {{
 }, {
     date = "May 24 2024",
     fff = "FFF #412",
-    title = "Undo/Redo improvements & Car Latency driving"
+    title = "Undo/Redo improvements & Car Latency driving",
+    content = {
+        new_qol = {{
+            name = "Redo",
+            summary = "A 'redo' shortcut will be added to re-issue a previously undone order."
+        }, {
+            name = "Undo information and confirmation",
+            summary = "Flying text notifications pop up after undoing and undoing actions more than a few minutes old requires confirmation."
+        }, {
+            name = "Undo improvements",
+            summary = "Undo now also works on recipes set by blueprints, wires created, rotations pasted and filters/requests"
+        }},
+        optimizations = {{
+            name = "Car latency driving",
+            summary = "Introducing LatencyOneTimeEffects allows for better vehicle control"
+        }}
+    }
 }, {
     date = "May 17 2024",
     fff = "FFF #411",
-    title = "All about asteroids"
+    title = "All about asteroids",
+    content = {
+        background = {{
+            name = "Asteroid designs",
+            summary = "The three different types of asteroid will be distinct in shape",
+            description = "Metallic asteroids are concave shapes of pitted metal and have a metallic sheen. Carbon asteroids are convex masses of gravel and dust, with a rough imperfect surface. Exide asteroids would be hard faced shapes that are shiny and glass-like."
+        }, {
+            name = "7680 reasons not to rotate",
+            summary = "Classic methods would require to render 5 sides over 64 frames."
+        }, {
+            name = "Enter shaders",
+            summary = "By applying a normal map, reflection can be applied only there where needed"
+        }, {
+            name = "Space dust shader",
+            summary = "A parallax effect is created by showing particles and asteroids at different speeds and scales."
+        }}
+    }
 }, {
     date = "May 10 2024",
     fff = "FFF #410",
-    title = "Rocket turret & Target priorities"
+    title = "Rocket turret & Target priorities",
+    content = {
+        new_entities = {{
+            name = "Rocket turret",
+            summary = "The rocket turret is a 3x3 long-range turret that shoots rockets (ncluding atomic bombs)",
+            details = "The rocket turret is unlocked on one of the three initial planets. It has a minimum range of 15 and a maximum range of 36. Rocket turrets are very useful on space platforms against large asteroids. The rocket ammo no longer requires electronic circuits as copper is scarce in space."
+        }},
+        new_concepts = {{
+            name = "Turret target priorities & filtering",
+            summary = "All turrets except artillery turret get the option to give an explicit order in which targets will be picked, when multiple are in range."
+        }, {
+            name = "Turret circuit connections",
+            summary = "Turrets can be controlled via the circuit network on enable/disable, priority, ignore unlisted targets and read ammo."
+        }}
+    }
 }, {
     date = "May 03 2024",
     fff = "FFF #409",
-    title = "Diminishing beacons"
+    title = "Diminishing beacons",
+    content = {
+        new_concepts = {{
+            name = "Diminishing beacons",
+            summary = "Instead of providing linear cumulative bonuses, beacons now have a reduced effect as more are added. However, using more beacons is still beneficial.",
+            details = "The beacon effect is now calculated by taking the square root of the beacon count, while the base transmission value is buffed. Compared to 1.1, an 8 beacon set-up on normal quality yields about the same effect."
+        }}
+    }
 }, {
     date = "Apr 26 2024",
     fff = "FFF #408",
-    title = "Statistics improvements, Linux adventures"
+    title = "Statistics improvements, Linux adventures",
+    content = {
+        new_qol = {{
+            name = "Accumulator graph",
+            summary = "The electric network GUI now has a graph that shows the accumulator charge."
+        }, {
+            name = "Per surface production",
+            summary = "The production GUI can now be viewed per surface as well as globally."
+        }, {
+            name = "Quality graph",
+            summary = "THe production GUI can now distinct per quality level"
+        }},
+        optimizations = {{
+            name = "Science graph",
+            summary = "Science production graph now accounts for special bonusses such as productivity modules and research productivity technoloty."
+        }, {
+            name = "Linux adventures",
+            summary = "Rayguard is the hero behind keeping Factorio available on Linux.",
+            details = "During Rayguard's journey a number of Linux improvements have been implemented, such as Wayland support, adding window decorations, solving window resizing seizures and most importantly asynchronous saving."
+        }}
+    }
 }, {
     date = "Apr 19 2024",
     fff = "FFF #407",
-    title = "Automating a soundtrack"
+    title = "Automating a soundtrack",
+    content = {
+        background = {{
+            name = "Variable music tracks",
+            summary = "Donion talks about the procedural generation of variable music tracks in a game, where tracks are composed of layers, sections, and states that create variations in the music, offering diversity while maintaining a cohesive experience."
+        }, {
+            name = "Technical challenges",
+            summary = "To maintain seamless music playback and avoid audio artifacts, a custom queuing system was developed to ensure precise timing and alignment of music samples and layers, overcoming limitations in the SDL_Mixer library."
+        }}
+    }
 }, {
     date = "Apr 12 2024",
     fff = "FFF #406",
-    title = "Space Age Music"
+    title = "Space Age Music",
+    content = {
+        background = {
+            {
+                name = "Orchestrated music",
+                summary = "The new soundtracks have been recorded with a real orchestra in a real studio. This process involved 174 professionals under the lead of Petr."
+            },
+            {
+                name = "'Nauvis' soundtrack",
+                summary = "Nauvis will get an exxtended soundtrack based on the Factorio 1.1 soundtrack style. The melody that sounds when loading the game is integrated in each new planet's soundtrack."
+            },
+            {
+                name = "Space soundtrack",
+                summary = "For the space platform soundtrack two complementary elements are used, a spacey atmosphere and a rhythmic bass."
+            },
+            {
+                name = "Vulcanus soundtrack",
+                summary = "Vulcanus' soundtrack is dark, oppressive, hot and heavy. But also wonderful."
+            },
+            {
+                name = "Fulgora soundtrack",
+                summary = "Fulgora's soundtrack theme is based on electro-magnetism with a lot of experimental sounds."
+            },
+            name = "Over 5 hours of soundtrack",
+            summary = "Every surface has around 1 our of music, which boils down to 5 hours of new soundtracks + 1 hour of Nauvis."
+        }
+    }
 }, {
     date = "Apr 05 2024",
     fff = "FFF #405",
